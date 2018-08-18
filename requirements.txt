@@ -1,0 +1,2 @@
+socketIO-client-nexus==0.7.6
+transitions==0.6.8
