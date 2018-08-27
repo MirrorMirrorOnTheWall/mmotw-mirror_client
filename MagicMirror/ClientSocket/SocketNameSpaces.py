@@ -1,15 +1,20 @@
-from socketIO_client_nexus import SocketIO, BaseNamespace
+from socketIO_client_nexus import BaseNamespace
 
 class ProvisionDeviceNamespace(BaseNamespace):
-    #   Tricky: "provision_response" is header name from server
-    #   Library extracts name from function name and uses it to abract this ...
-    #   socket.on('provision_response', on_provision_response)
-    #   This will be used for call backs when expecting the server to return data
-    def on_provisionResponse(self, *args):
-        print('Response: {}'.format(args[0]))
+    #   This can only be used for logging unless we can figure out how to return data
+    #   From here
 
-    def on_connected(self):
-        print('Connected to server socket...')
+    def on_connect(self):
+        print('PROVISION: Connected to server socket...')
 
-    def on_disconnected(self):
-        print('Disconnected from server socket...')
+    def on_disconnect(self):
+        print('PROVISION: Disconnected from server socket...')
+
+
+class OnboardingNamespace(BaseNamespace):
+
+    def on_connect(self):
+        print('ONBOARDING: Connected to server socket...')
+
+    def on_disconnect(self):
+        print('ONBOARDING: Disconnected from server socket...')
