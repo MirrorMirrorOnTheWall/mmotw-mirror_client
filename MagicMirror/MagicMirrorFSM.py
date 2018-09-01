@@ -56,5 +56,3 @@ class MagicMirrorFSM:
             MagicMirrorDevice.header = header
 
         #   Do more initializing stuff
-
-    def _getDeviceDetails(self, deviceDetailsPath):
